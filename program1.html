@@ -1,0 +1,118 @@
+<html>
+	<head>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	</head>
+
+	<body>
+	<p>
+		1. Write a program to create functions that will do the following     1. Add 2 numbers    2. Subtract 2 numbers    3. Divide 2 numbers    4. Multiply 2 numbers    Then update the program to get dynamic no of arguments(there can be 2,3,4 etc no of variables passed in when invoking the functions) The function should accept at least 2      variables and throw error if less then 2 are passed. The function should also validate the type of argument passed in
+	</p>
+		<div>
+			<input type="text" id="num1">&nbsp;&nbsp;&nbsp;  <input type="text" id="num2"> &nbsp;&nbsp;&nbsp; <div id="output"></div><br/><br/> 
+			
+			<input type="button" value="Add" onclick="addNumber()"/>&nbsp;&nbsp;
+			<input type="button" value="Subtract" onclick="subtractNumber()"/>&nbsp;&nbsp;
+			<input type="button" value="Divide" onclick="divideNumber()"/>&nbsp;&nbsp;
+			<input type="button" value="Multiply" onclick="multiplyNumber()"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		//$( document ).ready(function() {
+		//});
+				function addNumber()
+    			{
+    				var num1 = document.getElementById('num1').value;
+    				var num2 = document.getElementById('num2').value;
+    				
+    				if(isNaN(num1) || num1 == '')
+    				{
+    					alert('Please enter a Number');
+    					document.getElementById('num1').focus();
+    					return false;
+    				}	
+    				if(isNaN(num2)|| num2 == '')
+    				{
+    					alert('Please enter a Number');
+    					document.getElementById('num2').focus();
+    					return false;
+    				}	
+
+    				var addNum = parseInt(num1) + parseInt(num2);
+    				document.getElementById('output').innerHTML = "Addition is = " + addNum;
+    				
+    			}
+
+    			function subtractNumber()
+    			{
+    				var num1 = document.getElementById('num1').value;
+    				var num2 = document.getElementById('num2').value;
+    				
+    				if(isNaN(num1) || num1 == '')
+    				{
+    					alert('Please enter a Number');
+    					document.getElementById('num1').focus();
+    					return false;
+    				}	
+    				if(isNaN(num2)|| num2 == '')
+    				{
+    					alert('Please enter a Number');
+    					document.getElementById('num2').focus();
+    					return false;
+    				}	
+
+    				var addNum = parseInt(num1) - parseInt(num2);
+    				document.getElementById('output').innerHTML = "Subtraction is = " + addNum;
+    				
+    			}
+
+    			function divideNumber()
+    			{
+    				var num1 = document.getElementById('num1').value;
+    				var num2 = document.getElementById('num2').value;
+    				
+    				if(isNaN(num1) || num1 == '')
+    				{
+    					alert('Please enter a Number');
+    					document.getElementById('num1').focus();
+    					return false;
+    				}	
+    				if(isNaN(num2)|| num2 == '')
+    				{
+    					alert('Please enter a Number');
+    					document.getElementById('num2').focus();
+    					return false;
+    				}	
+
+    				var addNum = parseInt(num1) / parseInt(num2);
+    				document.getElementById('output').innerHTML = "Divident is = " + addNum;
+    				
+    			}
+
+    			function multiplyNumber()
+    			{
+    				var num1 = document.getElementById('num1').value;
+    				var num2 = document.getElementById('num2').value;
+    				
+    				if(isNaN(num1) || num1 == '')
+    				{
+    					alert('Please enter a Number');
+    					document.getElementById('num1').focus();
+    					return false;
+    				}	
+    				if(isNaN(num2)|| num2 == '')
+    				{
+    					alert('Please enter a Number');
+    					document.getElementById('num2').focus();
+    					return false;
+    				}	
+
+    				var addNum = parseInt(num1) * parseInt(num2);
+    				document.getElementById('output').innerHTML = "Multification is = " + addNum;
+    				
+    			}
+	 </script>
+	
+</html>
+
