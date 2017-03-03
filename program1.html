@@ -10,108 +10,87 @@
 	</p>
 		<div>
 			<input type="text" id="num1">&nbsp;&nbsp;&nbsp;  <input type="text" id="num2"> &nbsp;&nbsp;&nbsp; <div id="output"></div><br/><br/> 
-			
-			<input type="button" value="Add" onclick="addNumber()"/>&nbsp;&nbsp;
-			<input type="button" value="Subtract" onclick="subtractNumber()"/>&nbsp;&nbsp;
-			<input type="button" value="Divide" onclick="divideNumber()"/>&nbsp;&nbsp;
-			<input type="button" value="Multiply" onclick="multiplyNumber()"/>
+	
+
+
+            <button id="Add" onClick="reply_click(this.id)">Add</button>
+            <button id="Subtract" onClick="reply_click(this.id)">Subtract</button>
+            <button id="Divide" onClick="reply_click(this.id)">Divide</button>
+            <button id="Multiply" onClick="reply_click(this.id)">Multiply</button>
+
+
+
+
 		</div>
 	</body>
 	<script type="text/javascript">
-		
-		//$( document ).ready(function() {
-		//});
-				function addNumber()
-    			{
-    				var num1 = document.getElementById('num1').value;
-    				var num2 = document.getElementById('num2').value;
-    				
-    				if(isNaN(num1) || num1 == '')
-    				{
-    					alert('Please enter a Number');
-    					document.getElementById('num1').focus();
-    					return false;
-    				}	
-    				if(isNaN(num2)|| num2 == '')
-    				{
-    					alert('Please enter a Number');
-    					document.getElementById('num2').focus();
-    					return false;
-    				}	
 
-    				var addNum = parseInt(num1) + parseInt(num2);
-    				document.getElementById('output').innerHTML = "Addition is = " + addNum;
-    				
-    			}
+		var Module = (function () {
+  
+          return {
+                        publicCheckvalidNumber: function (argument_val) {
+                                        var num1 = document.getElementById('num1').value;
+                                        var num2 = document.getElementById('num2').value;
+                                        
+                                        if(isNaN(num1) || num1 == '')
+                                        {
+                                            alert('Please enter a Number');
+                                            document.getElementById('num1').focus();
+                                            return false;
+                                        }   
+                                        if(isNaN(num2)|| num2 == '')
+                                        {
+                                            alert('Please enter a Number');
+                                            document.getElementById('num2').focus();
+                                            return false;
+                                        } 
+                                             switch(argument_val) {
+                                                case 'Add':
+                                                    Module.publicAddNumber(num1,num2)
+                                                    break;
+                                                case 'Subtract':
+                                                    Module.publicSubtractNumber(num1,num2)
+                                                    break;
+                                                case 'Divide':
+                                                    Module.publicDivideNumber(num1,num2)
+                                                    break;
+                                                case 'Multiply':
+                                                    Module.publicMultiplyNumber(num1,num2)
+                                                    break;
+    
+                                                default:
+                                                    return false;
+                                            }
+                            },
+                            publicAddNumber: function (argt1,argt2) {
+                             
+                                var addNum = parseInt(argt1) + parseInt(argt2);
+                                document.getElementById('output').innerHTML = "Addition is = " + addNum;
+                            },
+                            publicSubtractNumber: function (argt1,argt2) {
+                                var subNum = parseInt(argt1) - parseInt(argt2);
+                                document.getElementById('output').innerHTML = "Subtraction is = " + subNum;
+                            },
+                            publicDivideNumber: function (argt1,argt2) {
+                                 var divideNum = parseInt(argt1) / parseInt(argt2);
+                                document.getElementById('output').innerHTML = "Divident is = " + divideNum;
+                            },
+                            publicMultiplyNumber: function (argt1,argt2)  {
+                                    var multipleNum = parseInt(argt1) * parseInt(argt2);
+                                document.getElementById('output').innerHTML = "Multiplication is = " + multipleNum;
+                            }   
+          };
 
-    			function subtractNumber()
-    			{
-    				var num1 = document.getElementById('num1').value;
-    				var num2 = document.getElementById('num2').value;
-    				
-    				if(isNaN(num1) || num1 == '')
-    				{
-    					alert('Please enter a Number');
-    					document.getElementById('num1').focus();
-    					return false;
-    				}	
-    				if(isNaN(num2)|| num2 == '')
-    				{
-    					alert('Please enter a Number');
-    					document.getElementById('num2').focus();
-    					return false;
-    				}	
+})();
 
-    				var addNum = parseInt(num1) - parseInt(num2);
-    				document.getElementById('output').innerHTML = "Subtraction is = " + addNum;
-    				
-    			}
+function reply_click(clicked_id)
+            {
+            
+                Module.publicCheckvalidNumber(clicked_id);
 
-    			function divideNumber()
-    			{
-    				var num1 = document.getElementById('num1').value;
-    				var num2 = document.getElementById('num2').value;
-    				
-    				if(isNaN(num1) || num1 == '')
-    				{
-    					alert('Please enter a Number');
-    					document.getElementById('num1').focus();
-    					return false;
-    				}	
-    				if(isNaN(num2)|| num2 == '')
-    				{
-    					alert('Please enter a Number');
-    					document.getElementById('num2').focus();
-    					return false;
-    				}	
+            }
 
-    				var addNum = parseInt(num1) / parseInt(num2);
-    				document.getElementById('output').innerHTML = "Divident is = " + addNum;
-    				
-    			}
 
-    			function multiplyNumber()
-    			{
-    				var num1 = document.getElementById('num1').value;
-    				var num2 = document.getElementById('num2').value;
-    				
-    				if(isNaN(num1) || num1 == '')
-    				{
-    					alert('Please enter a Number');
-    					document.getElementById('num1').focus();
-    					return false;
-    				}	
-    				if(isNaN(num2)|| num2 == '')
-    				{
-    					alert('Please enter a Number');
-    					document.getElementById('num2').focus();
-    					return false;
-    				}	
-
-    				var addNum = parseInt(num1) * parseInt(num2);
-    				document.getElementById('output').innerHTML = "Multification is = " + addNum;
-    				
-    			}
 	 </script>
 	
 </html>
